@@ -15,8 +15,8 @@ public class EnemyMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.LookAt(target.transform.position);
-        transform.Rotate(new Vector3(0, -90, -90), Space.Self);
+        //transform.LookAt(target.transform.position);
+        //transform.Rotate(new Vector3(0, -90, -90), Space.Self);
         if (Vector3.Distance(transform.position, target.position) > 1.25f)
         {
             Vector2 newVel = Vector3.Normalize(new Vector3(transform.position.x - target.position.x, transform.position.y - target.position.y, transform.position.z - target.position.z));

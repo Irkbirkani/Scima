@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4241869338416460}
   - component: {fileID: 212812418575625370}
   - component: {fileID: 61382673881104990}
-  - component: {fileID: 50645750310163722}
   - component: {fileID: 114670694710507680}
   - component: {fileID: 114463225938550376}
+  - component: {fileID: 50679168644161022}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -44,7 +44,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50645750310163722
+--- !u!50 &50679168644161022
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
@@ -62,8 +62,8 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 4
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &61382673881104990
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -146,7 +146,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 97f00973dc5221a4eb27adc63aadc0cc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 61d52bf59480ac34280bb749a0d647e8, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
