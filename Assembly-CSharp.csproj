@@ -55,11 +55,12 @@
      <Compile Include="Assets\Scripts\DisplayHealth.cs" />
      <Compile Include="Assets\Scripts\EnemyMovement.cs" />
      <Compile Include="Assets\Scripts\Health.cs" />
+     <Compile Include="Assets\Scripts\LoadGame.cs" />
+     <Compile Include="Assets\Scripts\LoadMainMenu.cs" />
      <Compile Include="Assets\Scripts\LoadPlayer.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\Shoot.cs" />
      <Compile Include="Assets\Scripts\Spawner.cs" />
-     <Compile Include="Assets\Scripts\StartButtonScript.cs" />
      <Compile Include="Assets\Scripts\TimeManager.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

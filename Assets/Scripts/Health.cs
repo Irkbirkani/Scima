@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour {
 
@@ -57,6 +58,10 @@ public class Health : MonoBehaviour {
 	void Update () {
 		if(health <= 0)
         {
+            if(tag=="TriPlayer" || tag == "CircPlayer" || tag == "SqrPlayer")
+            {
+                SceneManager.LoadScene("DeathScene");
+            }
             Destroy(gameObject);
         }
 	}

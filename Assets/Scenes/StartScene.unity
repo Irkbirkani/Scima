@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 57036106}
   - component: {fileID: 57036105}
   m_Layer: 5
-  m_Name: Button
+  m_Name: StartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -204,8 +204,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 130.9, y: 47}
+  m_AnchoredPosition: {x: 0, y: 12.7}
+  m_SizeDelta: {x: 205.8, y: 102.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &57036105
 MonoBehaviour:
@@ -247,7 +247,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 842868396}
-        m_MethodName: startBttn
+        m_MethodName: loadGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 61433533}
   - component: {fileID: 61433532}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TitleText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -394,7 +394,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 842868395}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a334a9dc41550346a5eed47980d529f, type: 3}
+  m_Script: {fileID: 11500000, guid: fe6ecbafe5f4d2b4393116f151e22dd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!81 &842868397
@@ -573,7 +573,7 @@ GameObject:
   - component: {fileID: 1074841761}
   - component: {fileID: 1074841760}
   m_Layer: 5
-  m_Name: Text
+  m_Name: StartText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -618,11 +618,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 5
+    m_MaxSize: 50
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
