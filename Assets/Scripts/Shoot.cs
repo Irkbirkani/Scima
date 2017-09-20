@@ -21,11 +21,8 @@ public class Shoot : MonoBehaviour {
 	void Update () {
         if (Input.GetMouseButton(0)&& Time.time > fireRate + lastShot)
         {
-            
-            Instantiate(bullet, firePoint.position, firePoint.rotation);
-            lastShot = Time.time;
+                Instantiate(bullet, firePoint.position, firePoint.rotation);
+                lastShot = Time.time;       
         }
-
-        
     }
 }

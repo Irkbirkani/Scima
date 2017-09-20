@@ -6,10 +6,12 @@ public class PlayerMovement : MonoBehaviour {
     public float moveSpeed = 3f;
     public float offset = 0.0f;
     private Rigidbody2D rigidbod;
+    private GameObject player;
 
     // Use this for initialization
     void Start () {
         rigidbod = GetComponent<Rigidbody2D>();
+        player = GameObject.Find("Player");
 	}
 	
 	// Update is called once per frame
@@ -23,5 +25,6 @@ public class PlayerMovement : MonoBehaviour {
         difference.Normalize();
         float rotation_z = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rotation_z + offset);
+        player.transform.position = new Vector3(transform.position.x, transform.position.y);
     }
 }

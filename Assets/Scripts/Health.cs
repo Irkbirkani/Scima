@@ -12,7 +12,7 @@ public class Health : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         sprite = GetComponent<SpriteRenderer>().sprite;
-		if (gameObject.tag == "Player")
+		if (gameObject.tag == "TriPlayer" || gameObject.tag == "CircPlayer" || gameObject.tag == "SqrPlayer")
         {
             health = 40;
         }

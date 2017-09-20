@@ -15,6 +15,7 @@ public class Spawner : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        
         StartCoroutine(EnemyGenerator());
 	}
 
@@ -23,7 +24,9 @@ public class Spawner : MonoBehaviour {
         yield return new WaitForSeconds(delay);
         if (active)
         {
-            var newTransform = new Vector2(transform.position.x + Random.Range(-5, 5), transform.position.y + Random.Range(-3, 3));
+
+            Vector2 newTransform = new Vector2(transform.position.x + Random.Range(-5, 5), transform.position.y + Random.Range(-3, 3));
+           
             enemy.GetComponent<SpriteRenderer>().sprite = spriteList[Random.Range(minSprite, maxSprite)];
             Instantiate(enemy, newTransform, Quaternion.identity);
         }

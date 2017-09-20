@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class DisplayHealth : MonoBehaviour {
 
-    public Text healthText;
+    private Text healthText;
     private string health;
 
 	// Use this for initialization
 	void Start () {
         health = GetComponent<Health>().health.ToString();
+        healthText = GameObject.Find("Canvas/Health").GetComponent<Text>();
         healthText.text = health;
 	}
 	
