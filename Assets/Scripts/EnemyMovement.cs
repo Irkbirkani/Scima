@@ -6,7 +6,8 @@ public class EnemyMovement : MonoBehaviour {
     public float moveSpeed = 1f;
     private Transform target;
     private Rigidbody2D rigidbod;
-    
+	private float timeTillPush = 0f;
+
 	// Use this for initialization
 	void Start () {
 
@@ -17,11 +18,12 @@ public class EnemyMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        
-            if (Vector3.Distance(transform.position, target.position) > 1.25f)
+		timeTillPush -= Time.deltaTime;
+		Vector2 newVel = Vector3.Normalize(new Vector3(transform.position.x - target.position.x, transform.position.y - target.position.y, transform.position.z - target.position.z));
+            if (Vector3.Distance(transform.position, target.position) > 1.28f && timeTillPush <= 0)
             {
-                Vector2 newVel = Vector3.Normalize(new Vector3(transform.position.x - target.position.x, transform.position.y - target.position.y, transform.position.z - target.position.z));
-                rigidbod.AddForce((Random.value < 0.7) ? -newVel * moveSpeed : newVel * moveSpeed, ForceMode2D.Impulse);
+                rigidbod.AddForce(-newVel * moveSpeed, ForceMode2D.Impulse);
+				timeTillPush = 1;
             }
            
 	}

@@ -145,7 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dd1f0b3eb73abd49965ae71bc3bed4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePoint: {fileID: 4338989966574944}
+  firePoint:
+  - {fileID: 4338989966574944}
   bullet: {fileID: 1896512446353888, guid: 105eabe368769964aa7ed9187c52f2a8, type: 2}
   fireRate: 0.5
 --- !u!114 &114877931680726740
