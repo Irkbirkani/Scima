@@ -16,7 +16,7 @@ public class BulletMovement : MonoBehaviour {
         rigidBod = GetComponent<Rigidbody2D>();
 		playerType = GameObject.Find ("Player");
 		if (playerType.GetComponent<LoadPlayer> ().playerMode.tag == "SqrPlayer") 
-			difference = playerType.transform.position - transform.position;
+			difference = transform.position - playerType.GetComponent<LoadPlayer>().playerMode.transform.position;
 		 else 
         	difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         difference.Normalize();
