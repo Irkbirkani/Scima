@@ -97,4 +97,9 @@ public class Spawner : MonoBehaviour {
             minSprite = 27;
         }
     }
+
+    public void setLastTime()
+    {
+        lastTime = Time.time;
+    }
 }

@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114648638143657474}
   - component: {fileID: 60745640375851548}
   - component: {fileID: 60641342256257816}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TrianglePlayer
   m_TagString: TriPlayer
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4192554201483612}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: -1577725955494882426, guid: 0000000000000000d000000000000000, type: 0}
@@ -214,6 +214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 40
   startHlth: 40
+  dead: 0
 --- !u!212 &212386694567169378
 SpriteRenderer:
   m_ObjectHideFlags: 1

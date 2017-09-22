@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4338989966574944}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: -1577725955494882426, guid: 0000000000000000d000000000000000, type: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114877931680726740}
   - component: {fileID: 114361890074570916}
   - component: {fileID: 114710171015978674}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CirclePlayer
   m_TagString: CircPlayer
   m_Icon: {fileID: 0}
@@ -162,6 +162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 40
   startHlth: 40
+  dead: 0
 --- !u!212 &212567538306844918
 SpriteRenderer:
   m_ObjectHideFlags: 1

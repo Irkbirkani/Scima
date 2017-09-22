@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114826242488115272}
   - component: {fileID: 114246923514080466}
   - component: {fileID: 114809399065996454}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SquarePlayer
   m_TagString: SqrPlayer
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4744995916127338}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BotFirePoint
   m_TagString: Untagged
   m_Icon: {fileID: -1577725955494882426, guid: 0000000000000000d000000000000000, type: 0}
@@ -57,7 +57,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4435470331953160}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftFirePoint
   m_TagString: Untagged
   m_Icon: {fileID: -1577725955494882426, guid: 0000000000000000d000000000000000, type: 0}
@@ -72,7 +72,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4469587829920390}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TopFirePoint
   m_TagString: Untagged
   m_Icon: {fileID: -1577725955494882426, guid: 0000000000000000d000000000000000, type: 0}
@@ -87,7 +87,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4016302546914102}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightFirePoint
   m_TagString: Untagged
   m_Icon: {fileID: -1577725955494882426, guid: 0000000000000000d000000000000000, type: 0}
@@ -246,6 +246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 40
   startHlth: 40
+  dead: 0
 --- !u!114 &114521346076298132
 MonoBehaviour:
   m_ObjectHideFlags: 1

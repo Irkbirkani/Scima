@@ -15,4 +15,11 @@ public class LoadPlayer : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void changePlayer(GameObject newPlayer)
+    {
+        Destroy(GameObject.Find(playerMode.ToString()));
+        playerMode = newPlayer;
+        Instantiate(playerMode, transform.position, transform.rotation);
+    }
 }

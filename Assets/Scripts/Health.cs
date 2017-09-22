@@ -6,8 +6,9 @@ using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour {
 
     public int health;
-
     public int startHlth;
+    public bool dead = false;
+
     private Sprite sprite;
 
 	// Use this for initialization
@@ -60,7 +61,11 @@ public class Health : MonoBehaviour {
         {
             if(tag=="TriPlayer" || tag == "CircPlayer" || tag == "SqrPlayer")
             {
+                GameObject.Find("Arena").GetComponent<Spawner>().setLastTime();
                 SceneManager.LoadScene("DeathScene");
+            } else if (tag == "Enemy")
+            {
+                GetComponent<DropPowerup>().setDead(true);
             }
             Destroy(gameObject);
         }
@@ -69,5 +74,10 @@ public class Health : MonoBehaviour {
     public void giveDamage(int dmg)
     {
         health -= dmg;
+    }
+
+    public void addHealth(int hlth)
+    {
+        health += hlth;
     }
 }
