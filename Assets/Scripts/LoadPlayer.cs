@@ -8,7 +8,7 @@ public class LoadPlayer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Instantiate(playerMode);
+        Instantiate(playerMode, transform.parent.position, Quaternion.identity);
 	}
 	
 	// Update is called once per frame
@@ -20,6 +20,6 @@ public class LoadPlayer : MonoBehaviour {
     {
         Destroy(GameObject.Find(playerMode.ToString()));
         playerMode = newPlayer;
-        Instantiate(playerMode, transform.position, transform.rotation);
+        Instantiate(playerMode, transform.parent.position, transform.rotation);
     }
 }

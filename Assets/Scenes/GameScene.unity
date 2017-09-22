@@ -377,7 +377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4fe72b4fa6ae6548b9c431e5c737f15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMode: {fileID: 1516791432443420, guid: 2596df5220683e241bdc0d4118c15227, type: 2}
+  playerMode: {fileID: 1061639891817336, guid: ceec3423c2cdbd54a9a1559a995a8991, type: 2}
 --- !u!4 &178664741
 Transform:
   m_ObjectHideFlags: 0
@@ -431,7 +431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 027643c82c601684faae2d39993be8ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 1877472173494240, guid: be2080fe45b88a14db09ccd3c48bac30, type: 2}
+  enemy: {fileID: 1819893680004478, guid: be2080fe45b88a14db09ccd3c48bac30, type: 2}
   delay: 3
   active: 1
   spriteList:

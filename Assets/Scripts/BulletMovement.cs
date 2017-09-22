@@ -15,8 +15,12 @@ public class BulletMovement : MonoBehaviour {
     void Start () {
         rigidBod = GetComponent<Rigidbody2D>();
 		playerType = GameObject.Find ("Player");
-		if (playerType.GetComponent<LoadPlayer> ().playerMode.tag == "SqrPlayer") 
-			difference = transform.position - playerType.GetComponent<LoadPlayer>().playerMode.transform.position;
+		if (playerType.GetComponent<LoadPlayer> ().playerMode.tag == "SqrPlayer") {
+			Debug.Log ("Bullet location: "+ transform.position);
+			Debug.Log ("Player location: "+ playerType.transform.position);
+			difference = transform.position - playerType.transform.position;
+			Debug.Log ("Difference : " + difference);
+		}
 		 else 
         	difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         difference.Normalize();

@@ -25,21 +25,24 @@ public class Shoot : MonoBehaviour {
         {
 			if (tag == "SqrPlayer") {
 				if (swap) {
-                    Invoke("sqrTopShoot",  0f);
-                    Invoke("sqrBotShoot",  0f);
+					sqrBotShoot ();
+					sqrTopShoot ();
+                    //Invoke("sqrTopShoot",  0f);
+                    //Invoke("sqrBotShoot",  0f);
                     //Invoke("sqrTopShoot",  0.25f);
 					//Invoke("sqrBotShoot",  0.25f);
                     //Invoke("sqrTopShoot",  0.5f);
                     //Invoke("sqrBotShoot",  0.5f);
                     swap = !swap;
 				} else {
-                    Invoke("sqrRightShoot", 0f);
-                    Invoke("sqrLeftShoot",  0f);
+                    //Invoke("sqrRightShoot", 0f);
+                    //Invoke("sqrLeftShoot",  0f);
                     //Invoke("sqrRightShoot", 0.25f);
                     //Invoke("sqrLeftShoot",  0.25f);
                     //Invoke("sqrRightShoot", 0.5f);
                     //Invoke("sqrLeftShoot",  0.5f);
                     swap = !swap;
+					lastShot = Time.time;
                 }
 			} else {
 				Instantiate (bullet, firePoint[0].position, firePoint[0].rotation);

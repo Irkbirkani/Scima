@@ -8,6 +8,10 @@ TagManager:
   - TriPlayer
   - CircPlayer
   - SqrPlayer
+  - SqrPowerup
+  - TriPowerup
+  - LifePowerup
+  - BulletPowerup
   layers:
   - Default
   - TransparentFX

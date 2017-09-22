@@ -21,10 +21,9 @@ GameObject:
   - component: {fileID: 4764780091861986}
   - component: {fileID: 212502751981689432}
   - component: {fileID: 61053496890679992}
-  - component: {fileID: 114117213750980766}
   m_Layer: 0
   m_Name: TriPowerup
-  m_TagString: Untagged
+  m_TagString: SqrPowerup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67,19 +66,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
---- !u!114 &114117213750980766
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1265934762822902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe11b65e76d30ee4292b2c8e899b280b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  powerUp: triangle
-  newPlayer: {fileID: 1325979409164654, guid: e6db930df3cbabd40964b527098b17fc, type: 2}
 --- !u!212 &212502751981689432
 SpriteRenderer:
   m_ObjectHideFlags: 1

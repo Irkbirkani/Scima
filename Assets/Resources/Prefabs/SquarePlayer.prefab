@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114826242488115272}
   - component: {fileID: 114246923514080466}
   - component: {fileID: 114809399065996454}
+  - component: {fileID: 114359901454978128}
   m_Layer: 8
   m_Name: SquarePlayer
   m_TagString: SqrPlayer
@@ -246,7 +247,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 40
   startHlth: 40
-  dead: 0
+--- !u!114 &114359901454978128
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1061639891817336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe11b65e76d30ee4292b2c8e899b280b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUp: 
+  newPlayer: {fileID: 0}
 --- !u!114 &114521346076298132
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -277,7 +290,7 @@ MonoBehaviour:
   - {fileID: 4744995916127338}
   - {fileID: 4435470331953160}
   bullet: {fileID: 1896512446353888, guid: 105eabe368769964aa7ed9187c52f2a8, type: 2}
-  fireRate: 5
+  fireRate: 1
 --- !u!114 &114826242488115272
 MonoBehaviour:
   m_ObjectHideFlags: 1

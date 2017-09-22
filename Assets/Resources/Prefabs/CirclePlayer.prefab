@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 114877931680726740}
   - component: {fileID: 114361890074570916}
   - component: {fileID: 114710171015978674}
+  - component: {fileID: 114203895974714422}
   m_Layer: 8
   m_Name: CirclePlayer
   m_TagString: CircPlayer
@@ -123,6 +124,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   offset: -90
+--- !u!114 &114203895974714422
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1516791432443420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe11b65e76d30ee4292b2c8e899b280b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUp: 
+  newPlayer: {fileID: 0}
 --- !u!114 &114361890074570916
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -162,7 +176,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 40
   startHlth: 40
-  dead: 0
 --- !u!212 &212567538306844918
 SpriteRenderer:
   m_ObjectHideFlags: 1

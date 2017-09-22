@@ -21,10 +21,9 @@ GameObject:
   - component: {fileID: 4324566931481248}
   - component: {fileID: 212847633413219476}
   - component: {fileID: 61190363243164654}
-  - component: {fileID: 114155807958743732}
   m_Layer: 0
   m_Name: SqrPowerup
-  m_TagString: Untagged
+  m_TagString: SqrPowerup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67,19 +66,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
---- !u!114 &114155807958743732
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1462639930519992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe11b65e76d30ee4292b2c8e899b280b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  powerUp: square
-  newPlayer: {fileID: 1061639891817336, guid: ceec3423c2cdbd54a9a1559a995a8991, type: 2}
 --- !u!212 &212847633413219476
 SpriteRenderer:
   m_ObjectHideFlags: 1

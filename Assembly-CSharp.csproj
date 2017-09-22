@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\LoadGame.cs" />
      <Compile Include="Assets\Scripts\LoadMainMenu.cs" />
      <Compile Include="Assets\Scripts\LoadPlayer.cs" />
+     <Compile Include="Assets\Scripts\ObjectPool.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\PowerUp.cs" />
      <Compile Include="Assets\Scripts\Shoot.cs" />

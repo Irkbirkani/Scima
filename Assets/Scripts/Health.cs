@@ -7,7 +7,6 @@ public class Health : MonoBehaviour {
 
     public int health;
     public int startHlth;
-    public bool dead = false;
 
     private Sprite sprite;
 
@@ -61,11 +60,11 @@ public class Health : MonoBehaviour {
         {
             if(tag=="TriPlayer" || tag == "CircPlayer" || tag == "SqrPlayer")
             {
-                GameObject.Find("Arena").GetComponent<Spawner>().setLastTime();
+                //GameObject.Find("Arena").GetComponent<Spawner>().setLastTime();
                 SceneManager.LoadScene("DeathScene");
             } else if (tag == "Enemy")
             {
-                GetComponent<DropPowerup>().setDead(true);
+                GetComponent<DropPowerup>().dropPowerup();
             }
             Destroy(gameObject);
         }

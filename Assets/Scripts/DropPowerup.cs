@@ -10,7 +10,7 @@ public class DropPowerup : MonoBehaviour {
 
 
 
-    public void setDead(bool b)
+	public void dropPowerup()	
     {
         if (Random.value > 0.1)
         {

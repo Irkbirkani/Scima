@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114648638143657474}
   - component: {fileID: 60745640375851548}
   - component: {fileID: 60641342256257816}
+  - component: {fileID: 114324655948124496}
   m_Layer: 8
   m_Name: TrianglePlayer
   m_TagString: TriPlayer
@@ -162,6 +163,19 @@ PolygonCollider2D:
       - {x: 0.61, y: -0.63}
       - {x: 0.61, y: -0.59}
       - {x: 0.02, y: 0.62}
+--- !u!114 &114324655948124496
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1325979409164654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe11b65e76d30ee4292b2c8e899b280b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUp: 
+  newPlayer: {fileID: 0}
 --- !u!114 &114648638143657474
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -212,9 +226,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d34db2b4ada528541bfeed415baba8d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 40
+  health: 0
   startHlth: 40
-  dead: 0
 --- !u!212 &212386694567169378
 SpriteRenderer:
   m_ObjectHideFlags: 1
