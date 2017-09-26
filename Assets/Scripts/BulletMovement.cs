@@ -8,22 +8,26 @@ public class BulletMovement : MonoBehaviour {
     public int damage;
 
     private Rigidbody2D rigidBod;
+    private GameObject parent;
 	private GameObject playerType;
     private Vector3 difference;
 
     // Use this for initialization
     void Start () {
         rigidBod = GetComponent<Rigidbody2D>();
-		playerType = GameObject.Find ("Player");
-		if (playerType.GetComponent<LoadPlayer> ().playerMode.tag == "SqrPlayer") {
-			Debug.Log ("Bullet location: "+ transform.position);
-			Debug.Log ("Player location: "+ playerType.transform.position);
+        parent = GameObject.Find("Player");
+        for (int i = 0; i < parent.transform.childCount; i++)
+        {
+            if (parent.transform.GetChild(i).gameObject.activeSelf == true)
+                playerType = parent.transform.GetChild(i).gameObject;
+        }
+        Debug.Log(playerType.tag);
+        if (playerType.tag == "SqrPlayer")
 			difference = transform.position - playerType.transform.position;
-			Debug.Log ("Difference : " + difference);
-		}
 		 else 
         	difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         difference.Normalize();
+        Invoke("destroy", 4);
     }
 	
 	// Update is called once per frame
@@ -42,5 +46,10 @@ public class BulletMovement : MonoBehaviour {
 
         Destroy(gameObject);
 
+    }
+
+    void destroy()
+    {
+        Destroy(this);
     }
 }

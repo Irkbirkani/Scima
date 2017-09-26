@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class PowerUp : MonoBehaviour {
 
+    public GameObject sqrPower;
+    public GameObject triPower;
+
     void OnTriggerEnter2D(Collider2D other)
     {
-		if (other.gameObject.layer == LayerMask.GetMask ("Player")) {
-			if (other.tag == "SqrPowerup") {
-				GetComponent<LoadPlayer> ().changePlayer (Resources.Load ("/Assets/Resources/Prefabs/SqrPlayer", typeof(GameObject)));
-				Destroy (other);
+		if (other.gameObject.layer == 9) {
+            if (other.tag == "SqrPowerup") {
+                Destroy(other.gameObject);
+               transform.parent.GetComponent<LoadPlayer>().changePlayer (1);
 			} else if (other.tag == "TriPowerup") {
-				GetComponent<LoadPlayer> ().changePlayer (Resources.Load ("/Assets/Resources/Prefabs/TriPlayer", typeof(GameObject)));
-				Destroy (other);
+                Destroy(other.gameObject);
+                transform.parent.GetComponent<LoadPlayer> ().changePlayer (2);
 			} else if (other.tag == "LifePowerup") {
-				GetComponent<Health> ().addHealth (5);
-				Destroy (other);
+                Destroy(other.gameObject);
+                GetComponent<Health> ().addHealth (5);
 			}
 		}
     }

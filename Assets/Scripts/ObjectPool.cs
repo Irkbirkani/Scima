@@ -6,7 +6,7 @@ public class ObjectPool : MonoBehaviour {
 
 	public GameObject enemy;
 
-	private GameObject[] poolInstances = GameObject[5];
+	private GameObject[] poolInstances;
 
-	private GameObject createInstance
+    private GameObject createInstance;
 }

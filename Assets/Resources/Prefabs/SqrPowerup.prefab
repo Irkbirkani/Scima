@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4324566931481248}
   - component: {fileID: 212847633413219476}
   - component: {fileID: 61190363243164654}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SqrPowerup
   m_TagString: SqrPowerup
   m_Icon: {fileID: 0}

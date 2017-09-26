@@ -77,6 +77,7 @@ public class Health : MonoBehaviour {
 
     public void addHealth(int hlth)
     {
-        health += hlth;
+        int temp = health + hlth;
+        health = (temp >= 40) ? 40 : temp;
     }
 }

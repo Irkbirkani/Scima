@@ -174,8 +174,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe11b65e76d30ee4292b2c8e899b280b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerUp: 
-  newPlayer: {fileID: 0}
+  sqrPower: {fileID: 1061639891817336, guid: ceec3423c2cdbd54a9a1559a995a8991, type: 2}
+  triPower: {fileID: 1325979409164654}
 --- !u!114 &114648638143657474
 MonoBehaviour:
   m_ObjectHideFlags: 1
