@@ -13,45 +13,13 @@ public class Health : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         sprite = GetComponent<SpriteRenderer>().sprite;
-		if (gameObject.tag == "TriPlayer" || gameObject.tag == "CircPlayer" || gameObject.tag == "SqrPlayer")
-        {
-            health = 40;
-        }
-        else if (sprite.name == "circle")
-        {
-            health = 2;
-            startHlth = 2;
-        }
-        else if (sprite.name == "Triangle")
-        {
-            health = 3;
-            startHlth = 3;
-        }
-        else if (sprite.name == "square")
-        {
-            health = 4;
-            startHlth = 4;
-        }
-        else if (sprite.name == "Pentagon")
-        {
-            health = 5;
-            startHlth = 5;
-        }
-        else if (sprite.name == "Hexagon")
-        {
-            health = 6;
-            startHlth = 6;
-        }
-        else if (sprite.name == "Septagon")
-        {
-            health = 7;
-            startHlth = 7;
-        }
-        else if (sprite.name == "Octogon")
-        {
-            health = 8;
-            startHlth = 8;
-        }
+		setHealth (sprite.name);
+		if(tag=="TriPlayer" || tag == "CircPlayer" || tag == "SqrPlayer")
+		{
+			health = 40;
+			startHlth = health;
+		}
+
     }
 	
 	// Update is called once per frame
@@ -62,11 +30,11 @@ public class Health : MonoBehaviour {
             {
                 //GameObject.Find("Arena").GetComponent<Spawner>().setLastTime();
                 SceneManager.LoadScene("DeathScene");
-            } else if (tag == "Enemy")
+			} else if (tag == "Enemy" && this.isActiveAndEnabled)
             {
                 GetComponent<DropPowerup>().dropPowerup();
+				GameObject.Find ("Arena").transform.GetChild(1).gameObject.GetComponent<Spawner>().setInavtive(this.gameObject);
             }
-            Destroy(gameObject);
         }
 	}
 
@@ -80,4 +48,42 @@ public class Health : MonoBehaviour {
         int temp = health + hlth;
         health = (temp >= 40) ? 40 : temp;
     }
+
+	public void setHealth(string name){
+		 if (name == "circle")
+		{
+			health = 2;
+			startHlth = 2;
+		}
+		else if (name == "Triangle")
+		{
+			health = 3;
+			startHlth = 3;
+		}
+		else if (name == "square")
+		{
+			health = 4;
+			startHlth = 4;
+		}
+		else if (name == "Pentagon")
+		{
+			health = 5;
+			startHlth = 5;
+		}
+		else if (name == "Hexagon")
+		{
+			health = 6;
+			startHlth = 6;
+		}
+		else if (name == "Septagon")
+		{
+			health = 7;
+			startHlth = 7;
+		}
+		else if (name == "Octogon")
+		{
+			health = 8;
+			startHlth = 8;
+		}
+	}
 }

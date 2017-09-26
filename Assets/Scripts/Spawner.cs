@@ -11,25 +11,40 @@ public class Spawner : MonoBehaviour {
     private int maxSprite = 0;
     private int minSprite = 0;
     private float lastTime = 0.0f;
+	private GameObject[] pool;
+	private int numEnemies;
 
 
     // Use this for initialization
     void Start () {
+		pool = new GameObject[5];
+		for (int i = 0; i <= 4; i++) {
+			GameObject temp = Instantiate (enemy);
+			temp.SetActive (false);
+			temp.name = "enemy" + i;
+			pool [i] = temp;
+
+		}
+
+
         StartCoroutine(EnemyGenerator());
 	}
 
     IEnumerator EnemyGenerator()
     {
         yield return new WaitForSeconds(delay);
-        if (active)
+		if (active && numEnemies <= pool.Length)
         {
-
-            Vector2 newTransform = new Vector2(transform.position.x + Random.Range(-5, 5), transform.position.y + Random.Range(-3, 3));
-           
-				enemy.GetComponent<SpriteRenderer> ().sprite = spriteList [Random.Range (minSprite, maxSprite)];
-				Instantiate (enemy, newTransform, Quaternion.identity);
+			GameObject temp = getFirstInactive ();
+			if (temp != null) {
+				Vector2 newTransform = new Vector2 (transform.position.x + Random.Range (-5, 5), transform.position.y + Random.Range (-3, 3));
+				temp.GetComponent<SpriteRenderer> ().sprite = spriteList [Random.Range (minSprite, maxSprite)];
+				temp.GetComponent<SpriteRenderer> ().color = new Color (1, 0, 0);
+				temp.GetComponent<Health> ().setHealth (temp.GetComponent<SpriteRenderer> ().sprite.name);
+				temp.transform.position = newTransform;
+				numEnemies++;
+			}
         }
-
         StartCoroutine(EnemyGenerator());
     }
 
@@ -101,4 +116,24 @@ public class Spawner : MonoBehaviour {
     {
         lastTime = Time.time;
     }
+
+	GameObject getFirstInactive(){
+		GameObject temp = null;
+		for (int i = 0; i <= 4; i++) {
+			if (pool [i].activeSelf == false) {
+				pool [i].SetActive (true);
+				temp = pool [i];
+				return temp;
+			}
+		}
+		return temp;
+	}
+
+	public void setInavtive(GameObject deadEnemy){
+		int enemy = System.Int32.Parse ((deadEnemy.name [deadEnemy.name.Length - 1]).ToString ());
+		pool [enemy].SetActive (false);
+		numEnemies--;
+
+	}
+
 }

@@ -10,27 +10,19 @@ public class ObjectPool : MonoBehaviour {
 
 	private GameObject[] inactive;
 
-	public ObjectPool(GameObject _enemy) 
-	{
-		enemy = _enemy;
-		active = new GameObject[5];
-		inactive = new GameObject[5] {
-			enemy.SetActive (false),
-			enemy.SetActive (false),
-			enemy.SetActive (false),
-			enemy.SetActive (false),
-			enemy.SetActive (false)
-		};
-	}
 
-	public void createActive()
+
+	public void createActive(Vector2 newPosition)
 	{
 		for (int i = 0; i <= 4; i++) 
 		{
 			if (inactive [i].activeSelf == false) 
 			{
-				GameObject newActive = getActive () = inactive [i];
-
+				GameObject newActive = getActive ();
+				newActive = inactive [i];
+				inactive [i].SetActive (true);
+				newActive.SetActive (true);
+				newActive.transform.position = newPosition;
 			}
 		}
 	}
@@ -42,5 +34,10 @@ public class ObjectPool : MonoBehaviour {
 			if (active [i] == null)
 				return active [i];
 		}
+		return null;
+	}
+
+	public void setInactive(){
+		return;
 	}
 }

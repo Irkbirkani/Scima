@@ -21,7 +21,6 @@ public class BulletMovement : MonoBehaviour {
             if (parent.transform.GetChild(i).gameObject.activeSelf == true)
                 playerType = parent.transform.GetChild(i).gameObject;
         }
-        Debug.Log(playerType.tag);
         if (playerType.tag == "SqrPlayer")
 			difference = transform.position - playerType.transform.position;
 		 else 
@@ -44,7 +43,7 @@ public class BulletMovement : MonoBehaviour {
             other.GetComponent<Health>().giveDamage(damage);
         }
 
-        Destroy(gameObject);
+		Destroy (this.gameObject);
 
     }
 
