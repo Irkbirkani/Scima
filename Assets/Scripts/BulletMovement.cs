@@ -50,6 +50,6 @@ public class BulletMovement : MonoBehaviour {
 
     void destroy()
     {
-        Destroy(this);
+        Destroy(this.gameObject);
     }
 }

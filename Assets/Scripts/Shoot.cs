@@ -21,29 +21,13 @@ public class Shoot : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetMouseButton(0) && Time.time > fireRate + lastShot)
-        {
+		if (Input.GetMouseButton (0) && Time.time > fireRate + lastShot) {
 			if (tag == "SqrPlayer") {
-				if (swap) {
-					sqrBotShoot ();
-					sqrTopShoot ();
-                    Invoke("sqrTopShoot",  0.25f);
-					Invoke("sqrBotShoot",  0.25f);
-                    Invoke("sqrTopShoot",  0.5f);
-                    Invoke("sqrBotShoot",  0.5f);
-                    swap = !swap;
-                    lastShot = Time.time;
-                }
-                else {
-                    sqrRightShoot();
-                    sqrLeftShoot();
-                    Invoke("sqrRightShoot", 0.25f);
-                    Invoke("sqrLeftShoot",  0.25f);
-                    Invoke("sqrRightShoot", 0.5f);
-                    Invoke("sqrLeftShoot",  0.5f);
-                    swap = !swap;
-					lastShot = Time.time;
-                }
+				sqrBotShoot ();
+				sqrTopShoot ();
+				sqrRightShoot ();
+				sqrLeftShoot ();
+				lastShot = Time.time;
 			} else {
 				Instantiate (bullet, firePoint[0].position, firePoint[0].rotation);
 				lastShot = Time.time;       

@@ -19,6 +19,6 @@ public class DropPowerup : MonoBehaviour {
 
     void destroy()
     {
-        Destroy(powerUp);
+        Destroy(powerUp.gameObject);
     }
 }
