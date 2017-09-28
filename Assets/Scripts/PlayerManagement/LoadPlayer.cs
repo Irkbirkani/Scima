@@ -7,7 +7,7 @@ public class LoadPlayer : MonoBehaviour {
     public GameObject[] playerModes;
     public int defaultPlayerMode;
 
-    private GameObject mainPlayer;
+    private GameObject circPlayer;
     private GameObject sqrPlayer;
     private GameObject triPlayer;
     private GameObject[] players;
@@ -15,8 +15,8 @@ public class LoadPlayer : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        mainPlayer = Instantiate(playerModes[defaultPlayerMode], transform.position, Quaternion.identity);
-        mainPlayer.transform.parent = transform;
+        circPlayer = Instantiate(playerModes[defaultPlayerMode], transform.position, Quaternion.identity);
+        circPlayer.transform.parent = transform;
 
         sqrPlayer = Instantiate(playerModes[1], transform.position, Quaternion.identity);
         sqrPlayer.transform.parent = transform;
@@ -25,7 +25,8 @@ public class LoadPlayer : MonoBehaviour {
         triPlayer = Instantiate(playerModes[2], transform.position, Quaternion.identity);
         triPlayer.transform.parent = transform;
         triPlayer.SetActive(false);
-        players = new GameObject[3] { mainPlayer, sqrPlayer, triPlayer };
+
+        players = new GameObject[3] { circPlayer, sqrPlayer, triPlayer };
     }
 
     void Update()
@@ -50,9 +51,13 @@ public class LoadPlayer : MonoBehaviour {
 
     public void changePlayer(int newPlayer)
     {
-        players[currPlayer].SetActive(false);
+       
+		int hlth  = players[currPlayer].GetComponent<Health>().health;
+		players[currPlayer].SetActive(false);
         currPlayer = newPlayer;
         players[currPlayer].SetActive(true);
+		players[currPlayer].GetComponent<Health> ().health = hlth;
+		CancelInvoke ();
         Invoke("resetPlayer", 30);
     }
 
@@ -62,4 +67,13 @@ public class LoadPlayer : MonoBehaviour {
         currPlayer = 0;
         players[currPlayer].SetActive(true);
     }
+
+	public void giveAllDamage(int dmg)
+	{
+		for (int i = 0; i < 3; i++) 
+		{
+			players [i].GetComponent<Health> ().giveDamage (dmg);
+		}
+	}
+
 }

@@ -13,7 +13,7 @@ public class DropPowerup : MonoBehaviour {
         if (Random.value > 0.8)
         {
             powerUp = Instantiate(powerUps[Random.Range(0, powerUps.Length)], transform.position, transform.rotation);
-            Invoke("destroy", 3f);
+            Invoke("destroy", 6f);
         }
     }
 

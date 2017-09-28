@@ -24,6 +24,7 @@ public class TimeManager : MonoBehaviour {
     string FormatTime(float value)
     {
         TimeSpan t = TimeSpan.FromSeconds(value);
+		ScoreManagement.Time = value;
         return string.Format("{0:D2}:{1:D2}", t.Minutes, t.Seconds);
     }
 }

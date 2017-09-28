@@ -10,16 +10,20 @@ public class Health : MonoBehaviour {
 
     private Sprite sprite;
 
-	// Use this for initialization
-	void Start () {
-        sprite = GetComponent<SpriteRenderer>().sprite;
-		setHealth (sprite.name);
+	void Awake(){
 		if(tag=="TriPlayer" || tag == "CircPlayer" || tag == "SqrPlayer")
 		{
 			health = 40;
 			startHlth = health;
 		}
+	}
 
+	// Use this for initialization
+	void Start () {
+        sprite = GetComponent<SpriteRenderer>().sprite;
+		if (tag != "TriPlayer" && tag != "CircPlayer" && tag != "SqrPlayer") {
+			setHealth (sprite.name);
+		}
     }
 	
 	// Update is called once per frame
@@ -33,6 +37,8 @@ public class Health : MonoBehaviour {
             {
                 GetComponent<DropPowerup>().dropPowerup();
 				GameObject.Find ("Arena").transform.GetChild(1).gameObject.GetComponent<Spawner>().setInavtive(this.gameObject);
+				ScoreManagement.Score += startHlth;
+				ScoreManagement.BulletsHit += 1;
             }
         }
 	}
@@ -47,6 +53,9 @@ public class Health : MonoBehaviour {
         int temp = health + hlth;
         health = (temp >= 40) ? 40 : temp;
     }
+	public void setHealth(int hlth){
+		health = hlth;
+	}
 
 	public void setHealth(string name){
 		 if (name == "circle")

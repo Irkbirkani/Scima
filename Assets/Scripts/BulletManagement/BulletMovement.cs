@@ -41,6 +41,7 @@ public class BulletMovement : MonoBehaviour {
             float decAmount = 1f / (other.GetComponent<Health>().startHlth-1);
             other.GetComponent<SpriteRenderer>().color = new Color(other.GetComponent<SpriteRenderer>().color.r - decAmount, 0, 0);
             other.GetComponent<Health>().giveDamage(damage);
+			ScoreManagement.BulletsHit += 1;
         }
 
 		Destroy (this.gameObject);

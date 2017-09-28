@@ -8,10 +8,8 @@ public class Shoot : MonoBehaviour {
     public GameObject bullet;
     public float fireRate = 0.75f;
 
-
+	private bool superFire = false;
     private float lastShot = 0.0f;
-
-
 
 	// Use this for initialization
 	void Start () {
@@ -20,33 +18,49 @@ public class Shoot : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetMouseButton (0) && Time.time > fireRate + lastShot) {
+		if (Input.GetMouseButton (0) && Time.time > fireRate + lastShot && !superFire) {
 			if (tag == "SqrPlayer") {
-				sqrBotShoot ();
-				sqrTopShoot ();
-				sqrRightShoot ();
-				sqrLeftShoot ();
+				multiShoot (0,4);
 				lastShot = Time.time;
 			} else {
-				Instantiate (bullet, firePoint[0].position, firePoint[0].rotation);
-				lastShot = Time.time;       
+				singleShoot ();
+				lastShot = Time.time;
 			}
-        }
+			ScoreManagement.BulletsShot += 1;
+		} else if (Input.GetMouseButton (0) && Time.time > fireRate + lastShot && superFire) {
+			if (tag == "SqrPlayer") {
+				multiShoot (0, 8);
+				lastShot = Time.time;
+			} else if (tag == "CircPlayer") {
+				multiShoot (1, 3);
+				lastShot = Time.time;
+			} else if (tag == "TriPlayer") {
+				singleShoot ();
+				Invoke ("singleShoot", 0.25f);
+				lastShot = Time.time;
+			}
+			ScoreManagement.BulletsShot += 1;
+		}
     }
 
-	void sqrTopShoot(){
+	void multiShoot(int startIndex, int maxIndex){
+		for (int i = startIndex; i < maxIndex; i++) {
+			Instantiate (bullet, firePoint [i].position, firePoint [i].rotation);
+		}
+	}
+
+	void singleShoot(){
 		Instantiate (bullet, firePoint [0].position, firePoint [0].rotation);
 	}
-	void sqrRightShoot(){
-		Instantiate (bullet, firePoint [1].position, firePoint [1].rotation);
+
+	public void SuperFirePoint()
+	{
+		CancelInvoke ();
+		superFire = true;
+		Invoke("ResetFirePoint", 30f);
 	}
 
-	void sqrBotShoot(){
-		Instantiate (bullet, firePoint [2].position, firePoint [2].rotation);
+	void ResetFirePoint(){
+		superFire = false;
 	}
-
-	void sqrLeftShoot(){
-		Instantiate (bullet, firePoint [3].position, firePoint [3].rotation);
-	}
-		
 }
