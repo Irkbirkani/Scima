@@ -6,11 +6,11 @@ public class DropPowerup : MonoBehaviour {
 
     private GameObject powerUp;
     public GameObject[] powerUps;
-
+    public float dropPercent = 0.8f;
 
 	public void dropPowerup()	
     {
-        if (Random.value > 0.8)
+        if (Random.value > dropPercent)
         {
             powerUp = Instantiate(powerUps[Random.Range(0, powerUps.Length)], transform.position, transform.rotation);
             Invoke("destroy", 6f);

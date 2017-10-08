@@ -12,6 +12,7 @@ public class LoadPlayer : MonoBehaviour {
     private GameObject triPlayer;
     private GameObject[] players;
     private int currPlayer = 0;
+    private int tempPlayer;
 
     // Use this for initialization
     void Start () {
@@ -49,19 +50,30 @@ public class LoadPlayer : MonoBehaviour {
     }
 
 
-    public void changePlayer(int newPlayer)
+    public void startChangePlayer(int newPlayer)
     {
-       
-		int hlth  = players[currPlayer].GetComponent<Health>().health;
-		players[currPlayer].SetActive(false);
-        currPlayer = newPlayer;
+        Animate(newPlayer);
+        tempPlayer = newPlayer;
+        Invoke("finishChangePlayer", 0.5f);
+    }
+    void finishChangePlayer()
+    {
+        int hlth = players[currPlayer].GetComponent<Health>().health;
+        players[currPlayer].SetActive(false);
+        currPlayer = tempPlayer;
         players[currPlayer].SetActive(true);
-		players[currPlayer].GetComponent<Health> ().health = hlth;
-		CancelInvoke ();
-        Invoke("resetPlayer", 30);
+        players[currPlayer].GetComponent<Health>().health = hlth;
+        CancelInvoke();
+        Invoke("resetPlayer", 15);
     }
 
     void resetPlayer()
+    {
+        players[currPlayer].GetComponent<Animator>().SetBool("CircAnim", true);
+        GetComponent<AudioSource>().Play();
+        Invoke("reset", 1);
+    }
+    void reset()
     {
         players[currPlayer].SetActive(false);
         currPlayer = 0;
@@ -76,4 +88,19 @@ public class LoadPlayer : MonoBehaviour {
 		}
 	}
 
+    public void giveAllHealth(int hlth)
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            players[i].GetComponent<Health>().addHealth(hlth);
+        }
+    }
+
+    void Animate(int newPlayer)
+    {
+        if (newPlayer == 2)
+            players[currPlayer].GetComponent<Animator>().SetBool("TriAnim", true);
+        else if (newPlayer == 1)
+            players[currPlayer].GetComponent<Animator>().SetBool("SqrAnim", true);            
+    }
 }

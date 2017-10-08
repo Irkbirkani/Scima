@@ -39,7 +39,7 @@ public class EnemyMovement : MonoBehaviour {
         if (other.gameObject.tag == "CircPlayer" || other.gameObject.tag == "SqrPlayer" || other.gameObject.tag == "TriPlayer")
         {
 			GameObject.Find ("Player").GetComponent<LoadPlayer> ().giveAllDamage (this.GetComponent<Health> ().startHlth);
-            //other.gameObject.GetComponent<Health>().giveDamage(this.GetComponent<Health>().startHlth);
+            GetComponent<AudioSource>().Play();
         }
     }
 }

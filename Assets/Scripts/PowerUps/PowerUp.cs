@@ -7,17 +7,21 @@ public class PowerUp : MonoBehaviour {
     {
 		if (other.gameObject.layer == 9) {
 			if (other.tag == "SqrPowerup") {
-				Destroy (other.gameObject);
-				transform.parent.GetComponent<LoadPlayer> ().changePlayer (1);
+                other.GetComponent<AudioSource>().Play();
+                other.transform.position = new Vector2(1000, 1000);
+				transform.parent.GetComponent<LoadPlayer>().startChangePlayer(1);
 			} else if (other.tag == "TriPowerup") {
-				Destroy (other.gameObject);
-				transform.parent.GetComponent<LoadPlayer> ().changePlayer (2);
+                other.GetComponent<AudioSource>().Play();
+                other.transform.position = new Vector2(1000, 1000);
+                transform.parent.GetComponent<LoadPlayer>().startChangePlayer(2);
 			} else if (other.tag == "LifePowerup") {
-				Destroy (other.gameObject);
-				GetComponent<Health> ().addHealth (5);
-			} else if (other.tag == "BulletPowerup") {
-				Destroy (other.gameObject);
-				GetComponent<Shoot>().SuperFirePoint ();
+                other.GetComponent<AudioSource>().Play();
+                other.transform.position = new Vector2(1000, 1000);
+                GameObject.Find("Player").GetComponent<LoadPlayer>().giveAllHealth(5);
+            } else if (other.tag == "BulletPowerup") {
+                other.GetComponent<AudioSource>().Play();
+                other.transform.position = new Vector2(1000, 1000);
+                GetComponent<Shoot>().SuperFirePoint();
 			}
 		}
     }

@@ -8,17 +8,19 @@ public class Shoot : MonoBehaviour {
     public GameObject bullet;
     public float fireRate = 0.75f;
 
+    private AudioSource shot;
 	private bool superFire = false;
     private float lastShot = 0.0f;
 
 	// Use this for initialization
 	void Start () {
- 
+        shot = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetMouseButton (0) && Time.time > fireRate + lastShot && !superFire) {
+            shot.Play();
 			if (tag == "SqrPlayer") {
 				multiShoot (0,4);
 				lastShot = Time.time;
@@ -28,7 +30,8 @@ public class Shoot : MonoBehaviour {
 			}
 			ScoreManagement.BulletsShot += 1;
 		} else if (Input.GetMouseButton (0) && Time.time > fireRate + lastShot && superFire) {
-			if (tag == "SqrPlayer") {
+            shot.Play();
+            if (tag == "SqrPlayer") {
 				multiShoot (0, 8);
 				lastShot = Time.time;
 			} else if (tag == "CircPlayer") {
@@ -57,7 +60,7 @@ public class Shoot : MonoBehaviour {
 	{
 		CancelInvoke ();
 		superFire = true;
-		Invoke("ResetFirePoint", 30f);
+		Invoke("ResetFirePoint", 15f);
 	}
 
 	void ResetFirePoint(){

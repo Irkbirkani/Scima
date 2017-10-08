@@ -30,9 +30,10 @@ public class Health : MonoBehaviour {
 	void Update () {
 		if(health <= 0)
         {
-            if(tag=="TriPlayer" || tag == "CircPlayer" || tag == "SqrPlayer")
+            GameObject.Find("Arena").GetComponent<AudioSource>().Play();
+            if (tag=="TriPlayer" || tag == "CircPlayer" || tag == "SqrPlayer")
             {
-                SceneManager.LoadScene("DeathScene");
+                Invoke("deathScene", 1f);
 			} else if (tag == "Enemy" && this.isActiveAndEnabled)
             {
                 GetComponent<DropPowerup>().dropPowerup();
@@ -94,4 +95,9 @@ public class Health : MonoBehaviour {
 			startHlth = 8;
 		}
 	}
+
+    void deathScene()
+    {
+        SceneManager.LoadScene("DeathScene");
+    }
 }

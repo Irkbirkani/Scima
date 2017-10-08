@@ -59,6 +59,8 @@ public class Spawner : MonoBehaviour {
 		for (int i = 0; i <= 4; i++) {
 			if (pool [i].activeSelf == false) {
 				pool [i].SetActive (true);
+                if (Time.time - lastTime >= 60)
+                    pool[i].GetComponent<DropPowerup>().dropPercent = 0.5f;
 				temp = pool [i];
 				return temp;
 			}
