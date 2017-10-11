@@ -33,7 +33,7 @@ public class Health : MonoBehaviour {
             GameObject.Find("Arena").GetComponent<AudioSource>().Play();
             if (tag=="TriPlayer" || tag == "CircPlayer" || tag == "SqrPlayer")
             {
-                Invoke("deathScene", 1f);
+                Invoke("deathScene", 0.25f);
 			} else if (tag == "Enemy" && this.isActiveAndEnabled)
             {
                 GetComponent<DropPowerup>().dropPowerup();

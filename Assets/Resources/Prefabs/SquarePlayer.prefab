@@ -521,7 +521,7 @@ MonoBehaviour:
   - {fileID: 4895261660014048}
   - {fileID: 4250144598845808}
   bullet: {fileID: 1896512446353888, guid: 105eabe368769964aa7ed9187c52f2a8, type: 2}
-  fireRate: 0.75
+  fireRate: 0.6
 --- !u!114 &114826242488115272
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -39,6 +39,9 @@ public class EnemyMovement : MonoBehaviour {
         if (other.gameObject.tag == "CircPlayer" || other.gameObject.tag == "SqrPlayer" || other.gameObject.tag == "TriPlayer")
         {
 			GameObject.Find ("Player").GetComponent<LoadPlayer> ().giveAllDamage (this.GetComponent<Health> ().startHlth);
+            GetComponent<Health>().giveDamage(GameObject.Find("Player").GetComponent<LoadPlayer>().giveDamage());
+            float decAmount = 1f / (GetComponent<Health>().startHlth - 1);
+            GetComponent<SpriteRenderer>().color = new Color(GetComponent<SpriteRenderer>().color.r - decAmount, 0, 0);
             GetComponent<AudioSource>().Play();
         }
     }

@@ -9,11 +9,11 @@ public class PowerUp : MonoBehaviour {
 			if (other.tag == "SqrPowerup") {
                 other.GetComponent<AudioSource>().Play();
                 other.transform.position = new Vector2(1000, 1000);
-				transform.parent.GetComponent<LoadPlayer>().startChangePlayer(1);
+				transform.parent.GetComponent<LoadPlayer>().startChangePlayer(2);
 			} else if (other.tag == "TriPowerup") {
                 other.GetComponent<AudioSource>().Play();
                 other.transform.position = new Vector2(1000, 1000);
-                transform.parent.GetComponent<LoadPlayer>().startChangePlayer(2);
+                transform.parent.GetComponent<LoadPlayer>().startChangePlayer(1);
 			} else if (other.tag == "LifePowerup") {
                 other.GetComponent<AudioSource>().Play();
                 other.transform.position = new Vector2(1000, 1000);

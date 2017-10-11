@@ -27,7 +27,7 @@ public class LoadPlayer : MonoBehaviour {
         triPlayer.transform.parent = transform;
         triPlayer.SetActive(false);
 
-        players = new GameObject[3] { circPlayer, sqrPlayer, triPlayer };
+        players = new GameObject[3] { circPlayer, triPlayer, sqrPlayer };
     }
 
     void Update()
@@ -54,7 +54,7 @@ public class LoadPlayer : MonoBehaviour {
     {
         Animate(newPlayer);
         tempPlayer = newPlayer;
-        Invoke("finishChangePlayer", 0.5f);
+        Invoke("finishChangePlayer", 0.45f);
     }
     void finishChangePlayer()
     {
@@ -71,7 +71,7 @@ public class LoadPlayer : MonoBehaviour {
     {
         players[currPlayer].GetComponent<Animator>().SetBool("CircAnim", true);
         GetComponent<AudioSource>().Play();
-        Invoke("reset", 1);
+        Invoke("reset", 0.25f);
     }
     void reset()
     {
@@ -98,9 +98,17 @@ public class LoadPlayer : MonoBehaviour {
 
     void Animate(int newPlayer)
     {
-        if (newPlayer == 2)
+        if (newPlayer == 1)
             players[currPlayer].GetComponent<Animator>().SetBool("TriAnim", true);
-        else if (newPlayer == 1)
+        else if (newPlayer == 2)
             players[currPlayer].GetComponent<Animator>().SetBool("SqrAnim", true);            
+    }
+    public GameObject getCurrPlayer()
+    {
+        return players[currPlayer];
+    }
+    public int giveDamage()
+    {
+        return currPlayer + 2;
     }
 }

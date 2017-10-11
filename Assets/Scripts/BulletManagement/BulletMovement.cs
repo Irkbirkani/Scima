@@ -42,9 +42,11 @@ public class BulletMovement : MonoBehaviour {
             other.GetComponent<SpriteRenderer>().color = new Color(other.GetComponent<SpriteRenderer>().color.r - decAmount, 0, 0);
             other.GetComponent<Health>().giveDamage(damage);
 			ScoreManagement.BulletsHit += 1;
+            Destroy(this.gameObject);
         }
 
-		Destroy (this.gameObject);
+        if(other.gameObject.layer != 9)
+		    Destroy (this.gameObject);
 
     }
 
